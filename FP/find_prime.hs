@@ -1,5 +1,8 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use otherwise" #-}
 import Data.Array.Unboxed
 
+primesToNA :: Int -> [Int]
 primesToNA n = 2: [i | i <- [3,5..n], ar ! i]
   where
     ar = f 5 $ accumArray (\ a b -> False) True (3,n) 
