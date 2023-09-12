@@ -10,3 +10,4 @@ primeSum 1 = 0
 primeSum 2 = 2
 primeSum n | isPrime n = n+primeSum (n-1)
            | otherwise = primeSum (n-1)
+    
