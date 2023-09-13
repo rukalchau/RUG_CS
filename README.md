@@ -1,14 +1,14 @@
 # RUG
 reading
 
--[ ] read Convex Optimization
+	-[ ] read Convex Optimization
 
--[ ] read Infomation Security
+	-[ ] read Infomation Security
 
 assignment
 
--[ ] lab 1 Functional Programming
+	-[ ] lab 1 Functional Programming
 
-  -[ ] sumToPrime
+		-[ ] sumToPrime
 	
--[ ] self study L2 Infomation Security
+	-[ ] self study L2 Infomation Security
