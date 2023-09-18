@@ -15,7 +15,7 @@ assignment
 
 	DL: 27 sep
 
-		-[ ] sumToPrime
+		-[x] sumToPrime
 		-[ ] chebyshev
 		-[ ] isNthRootOfUnity
 		-[ ] numberOfFiboSums
