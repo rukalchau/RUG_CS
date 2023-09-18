@@ -1,12 +1,11 @@
 
+
 isPrime :: Integer -> Bool
 isPrime 1 = False
 isPrime 2 = True
-isPrime n   | not (null ([x | x <- [2 .. n-1], mod n x == 0])) = False
-            | otherwise = True
+isPrime n = not(null [i|i<-[3,5..n-1],n `mod` i ==0])
 
 sumPrimesTo :: Integer -> Integer
-sumPrimesTo 0 = 0
 sumPrimesTo 1 = 0
 sumPrimesTo 2 = 2
 sumPrimesTo n | isPrime n = n+sumPrimesTo (n-1)

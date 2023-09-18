@@ -1,13 +1,3 @@
-
-def shift_chipher(msg,shift):
-    while shift<0:
-        shift+=26
-    n_msg=""
-    for i in msg:
-        n_msg+=chr((ord(i)-97+shift)%26+97)
-    return n_msg
-
-
 def vigenere_chipher_encoder(msg,key):
     n_msg=""
     key_len=len(key)
@@ -33,6 +23,20 @@ def vigenere_chipher_dencoder(msg,key):
     return n_msg
 
 
-print(shift_chipher(shift_chipher("rukal",-12),12))
-print(vigenere_chipher_encoder("rukal","abc"))
-print(vigenere_chipher_dencoder("rvmam","abc"))
+
+
+
+
+
+
+the_string = input()
+func,key= the_string.split()
+msg=input()
+if func=="e":
+    print(vigenere_chipher_encoder(msg,key),end='\n\n')
+else:
+    print(vigenere_chipher_dencoder(msg,key),end='\n\n')
+
+
+
+
