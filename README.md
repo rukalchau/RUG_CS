@@ -1,4 +1,4 @@
-# RUG
+# TASK
 reading
 
 	-[ ] read Convex Optimization
