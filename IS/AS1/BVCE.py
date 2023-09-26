@@ -13,96 +13,30 @@ def count_sd(msg):
     for i in freq.values():
         s+=i*i
         d+=i
-    return math.sqrt((s/26)-(d/26)**2)
+    return math.sqrt((s/26)-(d*d/676))
 
 def avg_sd(msg,x):
     sd=0
-    res=[msg[y-x:y] for y in range(x, len(msg)+x,x)]
+    res=[]
+    j=0
+    for i in msg:
+        if ord(i)>=97 and ord(i)<=122:
+            if len(res) == x:
+                res[j%x]+=i
+            else:
+                res.append(i)
+            j+=1
+    
     for i in res:
-        sd+=count_sd(i)
-        print(i)
-    return(sd/x)
+         sd+=count_sd(i)
+    
+    return res,x,sd
+
+def craking (msg,low,upp):
+    result=[]
+    for i in range(low,upp+1):
+        result.append(avg_sd(msg,i))
+    
 
 
-
-print(avg_sd('''qptqkkwlckhkmzpnkmupkcvkwzpicacgelmfwhzlzfnmfmcksh
-cmfgvnfmrzbtpgybokwilfqbgqujbppqgbrmjiumcgliilzbrg
-phqkwzhkbubwvvzlnmpmmbvigbqgvetsmlsuzxhagxkcbgrigj
-qewarvyxzbrrpexezjikcbbuigmwbbmqnwoeoipmixrzzdxawh
-gxkiuxyahkiykpbqqfascvvvpgcmmueehpsfmlkkpkcigbwkrd
-xqlehtvzvzyvqxriigirqbgtxfdbbmfmlkgzhnpleeikqvrpvl
-gultwytyuikoxeyqaxhczbaztbvojzizpizlerzkxgaphqslvb
-aigbrmnqmfjbufukptpmvwitkqygmquchffxqiawxnvzxganem
-tvjxrerxrzymfqqtgmlpqgebuxgudunlqptxofvxtmvlxnvmtt
-mfwvugxxpauxerjwbqiohbgelayanwszkmwjqaxezkivfmqmsz
-ymvmuznrotimgwalpoemlfmvlehcmmmqamixtmirbuxgudunlq
-ptxofvmfmbgpenirrwckibvvmcdryvudtxyzabrmnptriybgkr
-vwzwotvkkieiqazehfcmgagavuloayxexzkebbtmphytkmkkmn
-lyxvmgazlixofvmfmexwtflxrmpmmuebaczrlruimlnwalizym
-kcaahvojsfyvnzisvvmwwhaebvbhydbbhzymmfzrtxlfzwcknw
-iynmaydrnwkubaganitxfivfbbvssgcmczfxgaiqmwerwvgnjh
-vmftvulvwrprwmlwmkcvgipgpmkqiawpoemlzmgpikebacujxh
-kwqgclvyjkimgrigmeibmkqmnoiyuzhnxrkwodxxpabgezfzlr
-pvxzkjigbbuxmxtiiyjvemzzmlumhlivimocvgbzktwnlbrkqk
-ranpmfemqvmgazlixofvtllnvgkjavmvgksrkwttwvwhownxpm
-amxnimtravyaktigydbbhzymmfzrtxynmocebgmlnmvyvgpibv
-thqbvfemzvxkgfnvviqlceuxrocmtpvrwxnrbmfmjhvrulhcaa
-mauismfqfpeejwfcpvlxuigypwzmlkmqzcvrkiczsbnitxxnvn
-bpagpirclhaczxrzvlwcapkmvkqhlwsttucgtjxutfkkqvaqca
-ixnildwefyrrbxbjleiuejtrbvlxgrtuczgbexfcgbiawyyvlt
-kmgtpizxaczqbwikwluqgvlhvbpcmavmvymkytcaehvblytoxv
-zzalwagxquetrqevmgnvltjxutfkkatdbrkwkmmkytjhvjjigb
-ajbxiymlumexmtuqvybrwfenzbrqazxnvtxrbrkslkpxawekiy
-gwgbqazergptzmgbrzymvgxuxvzvfmjigxvoerhfiagiykzbrp
-rfmajqgfqfpsxbxhjqtkevyqtgvixrzvlmfmgtfacikckgteii
-qmgknegudxhlmamslkpxtqtxrxvkbnprkxnvbkgbuxqolavgxu
-xvnfextmehrrpxkmdvwijrxkmoexwyzdxpqtbhgelipmqbgzrj
-ecallxkdnhpajbxiyqgejrmakvvvgxuxvgcxayjrmwcyimgaah
-aqewplifmlkmqzcvrkiizxaczjtwuiqzgvnepeumlazvuijsgz
-gwitrhrbmgagtfkcttqwvglojjhmsytgowztbmylmmxqhtiaue
-zkqlrioxprrahfmonmrkcimvgaizrjnjiexgzrwyrzvmlkdqnq
-jhmejumwyzriigkqgekbnrzvzlgoatokpbhqevmgntqifmetpv
-yiucbfxzkigecbgxvcymkciftphvzmgiawxxzbacuvnwajmwyn
-vqijgimrmegsljcuqbvmyzzwgqjrepgjwlqkuxqkdmtlbgaivr
-bmczahjyljlrqgnxofvlawhehhvmtqqyrgnrvzclfbqvcguwar
-eiikqgeiaxaqvgdcgfpixvbrnqptprpabloyxauillmzfasxkx
-apifxwqewplbbuszyxtpbvxwoeiwtiaviuibkyvffmzkmwmcgh
-jhrvwytbgkczbarprfiyjizcjrepgjwlkmgasjkpnqzrjyoimw
-qbehrmjmvszvmclfzhltlmlkbmryavmmyimeybvoirpmtqgghw
-ktckcifasxksxwxukeyvatwjlttxvdbmcfivomimckbgzkiatr
-qbgfkcttqwflcykmfuifvstjqwcznupedwkcarvyxvjeyqfxhk
-mqzcvrkivljegauxhnzawcapkmvkqhlwstwodqeyzonxykzhlo
-rkeakwdcgpbtnvzucnbkizymvmcemslymgpgvbmuwnkyvpxmtc
-imczvgxnvbaamamyxpbacqaoitkqhlwsuircilmapbtnvzpyaz
-bwgkbkgjhmijkwogorgixvlttqqdeneqgfqfusubbackbwihim
-timelpgdmgrmqmlkdqlybgkmhlbbmvorwgpqgebutxnzammzla
-ejzogmzrwxnzabkxbkxgebvmvgkmhlbbmvnghoeamciqgesvlt
-pmtkiyjqociawirvuxlbnkcizxaczshvnzuogorgixvbamctal
-kyiwlwgamtxbhbwjbxnzbmfmibkkemkckvilkiotgvrwexvxnr
-igbstwwkzmvgkkokxnbvhrgctrqbehrmewmclnnxnfztllztxn
-vutrqpbettptptrlpakebborwsjxahltrpmytikpwyeggctxbb
-uxzoxmgczrvmvymksvokigbiujmvglojxbckrmlkrtifioxxiz
-xaczvgeiyqebzrgwsrotxqaxmtjkbcvgbjotifczvvetumlazv
-uijkpxtqtxrxvkbnprkeyzuimafbfrvwyrzngwrrbbmvgamyim
-isbnmmueetqvbmhkjmktmqvlgitxqjnufgxmbqsahatkwaydru
-vubmgydnkmgebhdbuxgogpxpifxexcgtqpbpibvzaclvwrzgcu
-jqfalojehpsxtwojsbcvgbvkcgupwxxxnvkbnprketuxnztvll
-kubacbrvltzyncqamlkkpvcvgnvevdxljrysxvbagagasaxplm
-urlooctxbkertzrvtjgfmwifcebwpveyzwgytyrfxvidrprvmv
-ymkgvgaizykxlbhkciigirwtkevyqvqtvwixltxsarweyrktjk
-heezzwgyqquczymluqflexdgucbjxitrvwrprommvvxpmpbtnv
-zbqavftrvmgmctaxusmtdqrehizxaczvymzzanqmqbrifvcsvp
-mmueebrppbtnvzwgaxlxnvkhlnrwixrbxqbnmiyfntkmebggww
-kcfnftrvclclnuvgjavgxuxvjzadrwvftrvuxlbgaibzoxlmex
-gogpxplhkmtxbacizxvotigaqibpcrzmfmphrlvlxpiprwsval
-yorlakimyyzskssjmvpmgtrjkpxsvvhrxvonjieeciiivimqml
-kzzfcaftkkjbapwhzlulbmfmjtvzymvmvsxhkiimctrthkiaag
-xckmsrzbjgexpovlnnwamlxvmdcgcavgjmlkiavlkjbxpjynjl
-twfntrmibzkmmzltrjramfmjtviruxrwnvpujmvmurkiziqusb
-vhrmztuczgoixeifrzvxhzfzxnivkxnvjkmsrggogpxpkexezz
-vzrproixeiftqtxrkimvgxuxvoejnrvbfezkmkupnmlkuqwrpr
-vmvymkuiflxoctostaxvgstxrwpkcvkigytllmymmklizlauis
-ameroixvdxlbhtprptxbbbmlkfvxrqzxtguiipwitfrpcgzzrt
-ogstxaqcaix
-''',9))
-
+craking("djwuhduwhdiuwe",2,5)

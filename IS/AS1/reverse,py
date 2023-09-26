@@ -1,0 +1,13 @@
+def reverse (key):
+    alpha="abcdefghijklmnopqrstuvwxyz"
+    r_key=""
+    x=97
+    for i in range(26):
+        for j in range(26):
+            if ord(key[j])==x:
+                r_key+=alpha[j]
+                x+=1
+    return(r_key)
+
+
+print(reverse("qwertyuiopasdfghjklzxcvbnm"))
