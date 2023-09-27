@@ -1,0 +1,1 @@
+primes = sieve [2..] where sieve (p:xs) = p:[x | x <- xs, mod x p /= 0]
