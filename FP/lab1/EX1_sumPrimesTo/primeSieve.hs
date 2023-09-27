@@ -6,4 +6,4 @@ isPrime n = go 2
       | n `rem` d == 0 = False
       | otherwise      = go (d+1)
 
-primes = filter isPrime [2 .. ]
+primes n = filter isPrime [2 .. n]
