@@ -17,7 +17,7 @@ assignment
 
 		-[x] sumToPrime
 		-[x] chebyshev
-		-[ ] isNthRootOfUnity
+		-[x] isNthRootOfUnity
 		-[ ] numberOfFiboSums
 		-[ ] totient
 		-[ ] countHappyNumbers
