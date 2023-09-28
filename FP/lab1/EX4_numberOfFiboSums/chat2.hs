@@ -13,4 +13,3 @@ numberOfFiboSums n = dp ! n
     countWays 0 = 1
     countWays i = sum [dp ! (i - fib) | fib <- fibs, fib <= i]
 
-
