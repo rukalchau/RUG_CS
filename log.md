@@ -1,3 +1,7 @@
 # Sep 28
     -[ ] IS L2 L3 revision 
-    -[ ] IS Assignment 2
+    -[x] IS Assignment 2
+
+# Sep 29 
+    -[ ] OPT Assignment 1 
+    -[ ] Convex OPT
