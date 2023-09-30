@@ -1,4 +1,4 @@
-# Sep 29 
+# Sep 29 - Oct 1 
     -[ ] OPT Assignment 1 
     -[ ] Convex OPT
 # Sep 28
