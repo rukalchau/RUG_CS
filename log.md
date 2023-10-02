@@ -1,5 +1,6 @@
 # OPT
     -[x] affine set
+    -[x] convex set 
     -[ ] hw 1 due oct 3 1500
     -[ ] 
 
