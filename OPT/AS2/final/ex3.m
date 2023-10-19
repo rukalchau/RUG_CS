@@ -4,12 +4,12 @@ b=rand(4,1);
 x0=rand(4,1);
 epsilon=10.^(-4);
 max_iterations=10.^7;
-gradient_descent_constant_armijo(A,b,x0,epsilon,max_iterations);
+gradient_descent_exact_line(A,b,x0,epsilon,max_iterations);
 
 
 
 
-function [x, converged, num_iterations] = gradient_descent_constant_armijo(A, b, x0, epsilon, max_iterations)
+function [x, converged, num_iterations] = gradient_descent_exact_line(A, b, x0, epsilon, max_iterations)
     x=x0;
     converged=false;
     
