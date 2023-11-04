@@ -1,7 +1,6 @@
 from datetime import datetime
 from chat2 import convert
 from plotter_v2 import mylt
-from convert2np import con2np
 
 data = """2/11/2023, 11:36:35 AM GMT+1:IS
 2/11/2023, 1:44:24 PM GMT+1$IS
