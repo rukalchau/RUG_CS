@@ -1,6 +1,6 @@
 from datetime import datetime
 from chat2 import convert
-
+from plotter import data_plt
 
 data = """2/11/2023, 11:36:35 AM GMT+1:IS
 2/11/2023, 1:44:24 PM GMT+1$IS
@@ -25,7 +25,17 @@ for line in lines:
         event = parts[1].strip()
         result.append([time, event])
 
+
+List=[]
 # Print the result
 for entry in result:
+    
+
+
     entry[0]=convert(entry[0])
+    entry[0]=(str(datetime.fromtimestamp(entry[0]).date()))
     print(entry)
+# data_plt(List)  
+    
+
+
