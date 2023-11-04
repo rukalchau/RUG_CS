@@ -19,4 +19,10 @@ def con2np(data):
                         date_event_frequency[i, j] = count
 
         print("Date vs. Event Frequency (2D array):")
+        print(unique_dates)
+        date_event_frequency=date_event_frequency.T
         print(date_event_frequency)
+
+        return(unique_dates,date_event_frequency)
+
+
