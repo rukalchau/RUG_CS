@@ -21,6 +21,7 @@ def mylt(data):
             count = np.sum(np.logical_and(np.array(dates) == date, np.array(events) == event))
             date_event_frequency[i, j] = count
 
+    date_event_frequency=0.25*date_event_frequency.astype("float64")
     # Create a stacked bar chart
     fig, ax = plt.subplots()
     width = 0.35
@@ -33,7 +34,7 @@ def mylt(data):
 
     # Add labels and legend
     ax.set_xlabel('Date')
-    ax.set_ylabel('Event Frequency')
+    ax.set_ylabel('Hours')
     ax.set_title('Date vs. Event Frequency (Stacked Bar Chart)')
     ax.set_xticks(x)
     ax.set_xticklabels(unique_dates, rotation=45)
