@@ -21,7 +21,7 @@ def mylt(data):
             count = np.sum(np.logical_and(np.array(dates) == date, np.array(events) == event))
             date_event_frequency[i, j] = count
 
-    date_event_frequency=0.25*date_event_frequency.astype("float64")
+    date_event_frequency=(25/60)*date_event_frequency.astype("float64")
     # Create a stacked bar chart
     fig, ax = plt.subplots()
     width = 0.35

@@ -34,7 +34,17 @@ data = """2/11/2023, 11:36:35 AM GMT+1$IS
 
 5/11/2023, 3:59:39 PM GMT+1$Python
 
-7/11/2023, 9:29:12 AM GMT+1$Python"""
+7/11/2023, 9:29:12 AM GMT+1$Python
+
+7/11/2023, 5:40:06 PM GMT+1$Convex OPT
+
+7/11/2023, 6:13:30 PM GMT+1$Convex OPT
+
+7/11/2023, 6:54:53 PM GMT+1$Convex OPT
+
+7/11/2023, 11:03:08 PM GMT+1$Convex OPT
+
+7/11/2023, 11:37:53 PM GMT+1$Convex OPT"""
 
 # Split the data into lines
 lines = data.split('\n')
