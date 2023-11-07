@@ -12,8 +12,8 @@ collect data                            store and analysis
 - [ ] find the pattern? 
 
 ## to do
-- [ ] syncing data (improve)
+- [x] syncing data (improve)
 
-    -using IMAP in email
+    -using zapier
 
 - [ ] post the summary on the page 
