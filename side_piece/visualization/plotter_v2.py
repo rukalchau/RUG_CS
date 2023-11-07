@@ -29,7 +29,7 @@ def mylt(data):
     bottom=np.zeros(len(x))
 
     for i, event in enumerate(unique_events):
-        plt.bar(x, date_event_frequency[:, i], width=0.1, label=event,bottom=bottom)
+        plt.bar(x, date_event_frequency[:, i], width=0.5, label=event,bottom=bottom)
         bottom+=np.array(date_event_frequency[:,i])
 
     # Add labels and legend
