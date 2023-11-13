@@ -36,9 +36,9 @@ imshow(X_deblur_pd, [0, 255], 'Colormap', gray);
 title('Primal-Dual Deblurred Image');
 
 % ADMM Deblurring
-lambda_admm = 2.5;
+lambda_admm = 0.01;
 num_iterations_admm = 250;
-X_deblur_admm = admm_deblur(X_blur, R, lambda_admm, num_iterations_admm);
+X_deblur_admm = admm_deblur(X_blur,lambda_admm, num_iterations_admm);
 
 % Display ADMM Deblurred Results
 figure;
@@ -52,7 +52,7 @@ function X_deblur_pd = primal_dual_deblur(X_blur, R, lambda, num_iterations)
     % Parameters
     sigma = 1 / sqrt(8);
     tau = 1 / sqrt(8);
-    %theta = 1;
+    theta = 1;
 
     % Initialize variables
     X_deblur_pd = X_blur;
@@ -65,7 +65,7 @@ function X_deblur_pd = primal_dual_deblur(X_blur, R, lambda, num_iterations)
         X_deblur_pd = X_deblur_pd + sigma * R(div_P);
 
         % Dual update
-       % P = proximal_l1(P + tau * grad(X_deblur_pd), lambda * tau);
+        P = proximal_l1(P + tau * grad(X_deblur_pd), lambda * tau);
 
         % Divergence update
         div_P = grad_T(P);
@@ -77,58 +77,57 @@ function X_deblur_pd = primal_dual_deblur(X_blur, R, lambda, num_iterations)
         P = proximal_l1(P, lambda * tau);
 
         % Update parameters
-        %theta_next = 1 / sqrt(1 + 2 * tau * theta^2);
-        %tau = tau * theta_next / theta;
-        %sigma = sigma / theta_next;
-        %theta = theta_next;
+        % theta_next = 1 / sqrt(1 + 2 * tau * theta^2);
+        % tau = tau * theta_next / theta;
+        % sigma = sigma / theta_next;
+        % theta = theta_next;
     end
 end
 
 function prox = proximal_l1(Y, alpha)
     % Soft thresholding proximal operator
-    %prox = max(0, 1 - alpha ./ sqrt(sum(Y.^2, 1))) .* Y;
+    prox = max(0, 1 - alpha ./ sqrt(sum(Y.^2, 1))) .* Y;
     normY = sqrt(sum(Y.^2, 1));
     scaling_factor = max(0, 1 - alpha ./ normY);
     prox = bsxfun(@times, Y, scaling_factor ./ (1 + alpha ./ normY));
 end
 
 
-function X_deblur_admm = admm_deblur(X_blur, R, lambda, num_iterations)
-    % Parameters
-    rho = 1;
-
+function X_deblur_admm = admm_deblur(X_blur,lamda, num_iterations)
     % Initialize variables
     [m, n] = size(X_blur);
-    X_deblur_admm = X_blur;
+    X_deblur_admm = zeros(m,n);
     Y = grad(X_deblur_admm);
-    Lagrange = zeros(size(Y));
+    Z = zeros(size(Y));
 
     % ADMM Iterations
     for k = 1:num_iterations
         % X update
-        X_deblur_admm = update_X(X_blur, R, Y, Lagrange, rho, lambda);
+        X_deblur_admm = update_X(X_blur, Z,lamda);
 
         % Y update
-        Y = update_Y(grad(X_deblur_admm)+ Lagrange / rho, lambda / rho);
+        Y = update_Y(Y, grad(X_deblur_admm),lamda);
 
         % Lagrange update
-        Lagrange = Lagrange + rho * (grad(X_deblur_admm) - Y);
+        Z = Z + lamda * (grad(X_deblur_admm) - Y);
     end
 end
 
 %Update X in ADMM
-function X_updated = update_X(X_blur, R, Y, Lagrange, rho, lambda)
-    A = rho * grad_T(Y - Lagrange);
-    B = lambda * R(X_blur);
-    X_updated = (A + B) / (rho + lambda);
+function X_updated = update_X(X_blur, Y, lamda)
+    X_updated = -lamda*grad_T(Y/lamda)+X_blur;
 end
 
 %Update Y in ADMM
-function Y_updated = update_Y(Y, alpha)
-      normY = sqrt(sum(Y.^2, 1));
-      scaling_factor = max(0, 1 - alpha ./ normY);
-    Y_updated = bsxfun(@times, Y, scaling_factor ./ normY);
+
+function Y = update_Y(Y, G, lamda)
+    Y = soft_threshold(G + Y, lamda);
 end
+
+function result = soft_threshold(X, lambda)
+    result = sign(X) .* max(0, abs(X) - lambda);
+end
+
 
 % Black Box, Not Important how it works
 function R = blackbox(X_ref)
