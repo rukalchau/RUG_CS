@@ -1,36 +1,9 @@
-# TASK
-reading
+# Task Oriented Study System (TOSS)
+In the second term in RUG, I will try to develop and apply TOSS in my daily study, in order to create a active learning workflow.
 
-	-[ ] read Convex Optimization
+# The model is task oriented, that means the system treats every study as a task, and do it in three phases. 
 
-	-[ ] read Infomation Security
+-  # before study
+-  # studying
+-  # after study 
 
-assignment
-
-
-	-[ ] assignment 1 Optimization
-
-	DL: 3 oct
-
-	-[ ] self study L2 Infomation Security
-
-
-	-[x] assignment 1 Infomation Security
-
-	DL: 22 sep
-
-	-[x] lab 1 Functional Programming
-
-	DL: 27 sep
-
-		-[x] sumToPrime
-		-[x] chebyshev
-		-[x] isNthRootOfUnity
-		-[ ] numberOfFiboSums
-		-[x] totient
-		-[x] countHappyNumbers
-		-[ ] cipherEncode
-		-[ ] takuzuStrings
-		-[ ] isCorrectTakuzu
-	
-	
