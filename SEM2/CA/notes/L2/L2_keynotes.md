@@ -4,14 +4,13 @@
     
 - positional vs non- positional
 
-    1010
-    the first 1 is 1000 and the second 1 is 10, value of the number depends on its postiton 
-    XI
+    1010\
+    the first 1 is 1000 and the second 1 is 10, value of the number depends on its postiton\
+    XI\
     the symbol of the value regardless of it position 
 
 
-- convert dex to bin
-
+- convert dex to bin\
     repeated division by radix(2)
 
 - convert bin to dex 
