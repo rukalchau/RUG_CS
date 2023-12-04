@@ -14,9 +14,13 @@ TO DO:(Stack)
     -[x] pre L3 CA
 [L3 CA](SEM2/CA/notes/L3/)
 
-
-    -[ ] study L2 WE
+    -[ ] post L2 WE (30 days)
+    -[ ] post L2 WE (7 days) 
+    -[x] post L2 WE (1 day) 
+    -[x] study L2 WE
     -[x] pre L2 WE
+[L2 WE](SEM2/WE/notes/L2/)
+
 
     -[ ] post L2 CA (30 days) DEC 15
     -[x] post L2 CA (7 days) NOV 22
