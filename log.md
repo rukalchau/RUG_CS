@@ -1,5 +1,12 @@
 TO DO:(Stack)
 
+    -[ ] post L5 CA (30 days)
+    -[ ] post L5 CA (7 days) 
+    -[ ] post L5 CA (1 day) 
+    -[x] study L5 CA
+    -[x] pre L5 CA 
+[L5 CA](SEM2/CA/notes/L5/)
+
     -[ ] post L4 CA (30 days)
     -[ ] post L4 CA (7 days) 
     -[ ] post L4 CA (1 day) 
@@ -7,9 +14,9 @@ TO DO:(Stack)
     -[x] pre L4 CA 
 [L4 CA](SEM2/CA/notes/L4/)
 
-    -[ ] post L3 CA (30 days) DEC 23
-    -[ ] post L3 CA (7 days) NOV 30
-    -[x] post L3 CA (1 day) NOV 23
+    -[ ] post L3 CA (30 days)
+    -[ ] post L3 CA (7 days)
+    -[ ] post L3 CA (1 day)
     -[x] study L3 CA
     -[x] pre L3 CA
 [L3 CA](SEM2/CA/notes/L3/)
