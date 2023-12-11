@@ -1,4 +1,10 @@
 TO DO:(Stack)
+    -[ ] post L6 CA (30 days)
+    -[ ] post L6 CA (7 days) 
+    -[ ] post L6 CA (1 day) 
+    -[x] study L6 CA
+    -[x] pre L6 CA 
+[L6 CA](SEM2/CA/notes/L6/)
 
     -[ ] post L5 CA (30 days)
     -[ ] post L5 CA (7 days) 
