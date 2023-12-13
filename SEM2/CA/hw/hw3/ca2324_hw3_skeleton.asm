@@ -1,4 +1,4 @@
-				.ORIG x3000			; Program begins here
+.ORIG x3000			; Program begins here
 ;-------------
 ;Instructions: CODE GOES HERE
 ;-------------
@@ -10,14 +10,12 @@ DO_WHILE        ADD R3, R3, R2
                 ADD R1, R1, #-1
                 BRp DO_WHILE
 
-				HALT
+HALT
 ;---------------	
 ;Data (.FILL, .STRINGZ, .BLKW)
 ;---------------
-DEC_6           .FILL   #6
-DEC_12          .FILL   #12
-
-                .END
+DEC_6   .FILL   #6
+DEC_12  .FILL   #12
 
 
 
