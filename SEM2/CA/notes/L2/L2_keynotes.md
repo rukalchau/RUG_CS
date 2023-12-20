@@ -70,8 +70,8 @@
 
     extend the bits depending on the sign
 
-- oveflow
-    - overflow only happen when you trying to add two positive bumbers or two negative numbers 
+- overflow
+    - overflow only happen when you trying to add two positive numbers or two negative numbers 
     - example : 01000 + 01001 = 10001(8+9=-15)
 
 ### Q: How to test overflow 
@@ -96,9 +96,11 @@
     
     - 127 is added to E, so the negtive exponent will be [1,126]
     - if E is 0, the fration will be subnormal, which means we don't assume the 1
-
-    - N = (-1)^S x 1.fraction x 2^(exponent-127) E = [1,254]
-    - N = (-1)^S x 0.fraction x 2^(-126)         E = 0 
+    
+        |               E = [1,254]                 |  E = 0     |
+        |-------------------------------------------|-----------|
+        |N = (-1)^S x 1.fraction x 2^(exponent-127) |N = (-1)^S x 0.fraction x 2^(-126)|
+        
 
 - infinity
     - if E =11111111
