@@ -132,6 +132,18 @@
 - Binary Code Decimal
     - represent 0-9 in four bits 
     - example: 3 : 0011
+        |decimal|BCD|
+        |-------|---|
+        |0|0000|
+        |1|0001|
+        |2|0010|
+        |3|0011|
+        |4|0100|
+        |5|0101|
+        |6|0110|
+        |7|0111|
+        |8|1000|
+        |9|1001|
 
 - Character Set
     - more than 1 interpretation can be used by bits 
