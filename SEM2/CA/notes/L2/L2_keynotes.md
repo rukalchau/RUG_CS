@@ -112,7 +112,8 @@
     - extend range into very small numbers 
 - zero
     - 00000000000000000000000000000000
-    - see explaination by chatgpt
+    - [see explaination by chatgpt](/SEM2/CA/notes/L2/L2_addtional.md)
+
 ### Q: give a example in floating point binary and covert it to dex
     1 01111110 10000000000000000000000
     -> -1 x 1.4194304 x 2^(126-127) = -0.75
