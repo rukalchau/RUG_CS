@@ -40,3 +40,22 @@ TO DO:(Stack)
 - [x] post L2 CA (1 day)
 - [x] study L2 CA
 [L2 CA](SEM2/CA/notes/L2/)
+
+|Topic|pre|study|post1|post2|post3|
+|-----|---|---|-----|-----|-----|
+|CA L1|     |   |     |     |     |
+|CA L2|  x  | x |  x  |  x  |  x  |
+|CA L3|  x  | x |     |     |     |
+|CA L4|  x  | x |     |     |     |
+|CA L5|  x  | x |     |     |     |
+|CA L6|  x  | x |     |     |     |
+|CA L7|     |   |     |     |     |
+|CA L8|     |   |     |     |     |
+|CA L9|     |   |     |     |     |
+|CA L10|     |   |     |     |     |
+|CA L11|     |   |     |     |     |
+|CA L12|     |   |     |     |     |
+|CA L13|     |   |     |     |     |
+|CA L14|     |   |     |     |     |
+|CA L15|     |   |     |     |     |
+
